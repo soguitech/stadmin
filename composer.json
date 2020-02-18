@@ -1,0 +1,41 @@
+{
+    "name": "soguitech/stadmin",
+    "description": "Panel d'administration",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Malal91",
+            "email": "controlmalal@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Soguitech\\Stadmin\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Soguitech\\Stadmin\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.5"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-f": "vendor/bin/phpunit --filter"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Soguitech\\Stadmin\\StadminServiceProvider"
+            ]
+        }
+    }
+}
