@@ -14,56 +14,37 @@ class StadminServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'stadmin');
 
+        $this->ensureHttps();
 
         $this->loadRoutesFrom(__DIR__.'../../routes/web.php');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'stadmin');
-       // if ($this->app->runningInConsole()) {
 
-            // We can publish all views like this commande below
-            // php artisan vendor:publish --provider="Soguitech\Stadmin\StadminServiceProvider" --tag="views"
+        if ($this->app->runningInConsole()) {
 
+            $this->commands([InstallStadmin::class]);
+
+            $this->publishes([__DIR__.'/../config/stadmin.php' =>   config_path('stadmin.php')], 'config');
+            $this->publishes([__DIR__.'/../resources/views' => resource_path('views/vendor/stadmin')], 'views');
+            $this->publishes([__DIR__.'/../public' => public_path('vendor/stadmin')], 'assets');
             $this->publishes([
-                __DIR__.'/../config/stadmin.php' =>   config_path('stadmin.php'),
-            ], 'config');
-
-
+                __DIR__.'/../resources/js' => resource_path('js/vendor/stadmin'),
+                __DIR__.'/../resources/css' => resource_path('css/vendor/stadmin'),
+            ], 'vue-component');
             $this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/stadmin'),
-            ], 'views');
+                __DIR__ . '/../database/migrations/create_articles_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_articles_table.php'),
+                __DIR__ . '/../database/migrations/create_roles_permissions_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_roles_permissions_table.php')
+            ], 'migrations');
 
-            // we can publish all assets like this commande below
-            //php artisan vendor:publish --provider="Soguitech\Stadmin\StadminServiceProvider" --tag="assets"
+        }
+    }
 
-            $this->publishes([
-                __DIR__.'/../resources/assets' => public_path('stadmin'),
-            ], 'assets');
-
-            $this->commands([
-                InstallStadmin::class,
-            ]);
-
-            if (function_exists('config_path')) {
-
-                if (! class_exists('CreateArticlesTable')) {
-                    $this->publishes([
-                        __DIR__ . '/../database/migrations/create_articles_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_articles_table.php'),
-                        // you can add any number of migrations here
-                    ], 'migrations');
-                }
-
-                if (! class_exists('CreateRolesPermissionsTables')) {
-                    $this->publishes([
-                        __DIR__ . '/../database/migrations/create_roles_permissions_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_roles_permissions_table.php'),
-                        // you can add any number of migrations here
-                    ], 'migrations');
-                }
-            }
-
-
-        // The migrations for this package can be published with command via
-            // php artisan vendor:publish --provider="Soguitech\Stadmin\StadminServiceProvider" --tag="migrations"
-        //}
+    protected function ensureHttps()
+    {
+        if (config('stadmin.https') || config('stadmin.secure')) {
+            url()->forceScheme('https');
+            $this->app['request']->server->set('HTTPS', true);
+        }
     }
 
 }

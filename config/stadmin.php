@@ -2,13 +2,15 @@
 
 return [
 
-    'models' => [
+    'route' => [
+        'prefix' => env('ADMIN_ROUTE_PREFIX', 'admin'),
+        'middleware' => ['web', 'admin']
+    ],
 
+    'models' => [
         'article' => Soguitech\Stadmin\Models\Article::class,
         'permission' => Soguitech\Stadmin\Models\Permission::class,
         'role' => Soguitech\Stadmin\Models\Role::class,
-
-
     ],
 
     'table_names' => [
@@ -17,6 +19,7 @@ return [
         'articles' => 'articles',
         'roles' => 'roles',
         'permissions' => 'permissions',
+        'admin_users' => 'admin_users',
 
 
         'model_has_articles' => 'model_has_articles',
@@ -30,6 +33,21 @@ return [
 
         'model_morph_key' => 'model_id',
     ],
+
+    'https' => env('ADMIN_HTTPS', false),
+
+    'default_avatar' => '/vendor/laravel-admin/AdminLTE/dist/img/user2-160x160.jpg',
+
+    'check_route_permission' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Indicates whether to check menu roles.
+    |--------------------------------------------------------------------------
+    */
+    'check_menu_roles'       => true,
+
+    'skin' => 'skin-blue-light',
 
     'cache' => [
 
