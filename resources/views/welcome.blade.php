@@ -27,7 +27,9 @@
     </head>
     <body class="page-header-fixed theme-black">
 
-        <div id="app"><base-app></base-app></div>
+        <div id="app">
+            <base-app></base-app>
+        </div>
 
         <script src="{{ mix('js/vendor/stadmin/app.js') }}"></script>
     </body>

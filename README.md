@@ -19,6 +19,15 @@ Run following command to finish install.
     php artisan stadmin:install
 ```
 
+## routes file
+In your web file add this code below :
+
+```php
+    Route::get(config('stadmin.route.prefix') . '/{any}', function () {
+        return view('vendor/stadmin/welcome');
+    })->where('any', '.*');
+```
+
 ## Composer file
 Add these below packages to your `package.json` file in dependencies :
 
@@ -44,6 +53,6 @@ Update your application's `webpack.mix.js` file to this :
 
 ```javascript
 mix.js('resources/js/vendor/stadmin/app.js',
-    'public/vendor/stadmin/js')
+    'public/js/vendor/stadmin')
 ```
 and run `npm run dev`.

@@ -3,7 +3,7 @@
 return [
 
     'route' => [
-        'prefix' => env('ADMIN_ROUTE_PREFIX', 'admin'),
+        'prefix' => env('STADMIN_ROUTE_PREFIX', 'stadmin'),
         'middleware' => ['web', 'admin']
     ],
 

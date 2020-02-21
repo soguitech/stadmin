@@ -26,7 +26,11 @@ class StadminServiceProvider extends ServiceProvider
 
             $this->publishes([__DIR__.'/../config/stadmin.php' =>   config_path('stadmin.php')], 'config');
             $this->publishes([__DIR__.'/../resources/views' => resource_path('views/vendor/stadmin')], 'views');
-            $this->publishes([__DIR__.'/../public' => public_path('vendor/stadmin')], 'assets');
+            $this->publishes([
+                __DIR__.'/../public/js' => public_path('js/vendor/stadmin'),
+                __DIR__.'/../public/css' => public_path('css/vendor/stadmin'),
+                __DIR__.'/../public/scss' => public_path('css/vendor/scss')
+            ], 'assets');
             $this->publishes([
                 __DIR__.'/../resources/js' => resource_path('js/vendor/stadmin'),
                 __DIR__.'/../resources/css' => resource_path('css/vendor/stadmin'),

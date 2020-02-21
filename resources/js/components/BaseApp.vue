@@ -4,7 +4,6 @@
 
 <script>
     export default {
-        props: {
-        },
+        name: 'base-app'
     };
 </script>
