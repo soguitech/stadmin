@@ -1,0 +1,48 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateProjectsTable extends Migration
+{
+
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        $tableNames = config('stadmin.table_names');
+
+        Schema::create($tableNames['projects'], function (Blueprint $table) use ($tableNames) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->text('description');
+            $table->string('cost');
+            $table->dateTime('startDate');
+            $table->dateTime('endDate');
+            $table->string('priority');
+            $table->string('status');
+            $table->string('type_project');
+            $table->unsignedBigInteger('client_id');
+            $table->string('slug');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+       $tableNames = config('stadmin.table_names');
+
+        Schema::dropIfExists($tableNames['projects']);
+    }
+}

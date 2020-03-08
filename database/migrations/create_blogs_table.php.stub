@@ -1,0 +1,44 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateBlogsTable extends Migration
+{
+
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        $tableNames = config('stadmin.table_names');
+
+        Schema::create($tableNames['blogs'], function (Blueprint $table) use ($tableNames) {
+            $table->bigIncrements('id');
+            $table->string('title');
+            $table->longText('body');
+            $table->unsignedBigInteger('author_id');
+            $table->unsignedBigInteger('category_id');
+            $table->string('img_file');
+            $table->string('slug');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        $tableNames = config('stadmin.table_names');
+
+        Schema::dropIfExists($tableNames['blogs']);
+    }
+}

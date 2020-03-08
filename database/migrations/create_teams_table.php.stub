@@ -1,0 +1,43 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateTeamsTable extends Migration
+{
+
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        $tableNames = config('stadmin.table_names');
+
+        Schema::create($tableNames['teams'], function (Blueprint $table) use ($tableNames) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->unsignedBigInteger('team_lead_id');
+            $table->unsignedBigInteger('project_id');
+            $table->string('slug');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        $tableNames = config('stadmin.table_names');
+
+        Schema::dropIfExists($tableNames['projects']);
+    }
+}

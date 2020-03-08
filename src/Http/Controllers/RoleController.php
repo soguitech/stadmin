@@ -40,7 +40,7 @@ class RoleController extends Controller
 
     public function givePermissionTo (Request $request, Role $role)
     {
-        $permission = Permission::findByName($request->get('name'), null);
+        $permission = Permission::findByName($request->get('name'));
         $role->givePermissionTo($permission);
 
         return redirect(route('roles.show', $role));

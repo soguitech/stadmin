@@ -4,7 +4,7 @@
 namespace Soguitech\Stadmin\Tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Soguitech\Stadmin\Models\Article;
+use Soguitech\Stadmin\Models\Blog;
 use Soguitech\Stadmin\Tests\TestCase;
 use Soguitech\Stadmin\Tests\User;
 
@@ -15,7 +15,7 @@ class ArticlesTest extends TestCase
     /** @test */
     function a_article_has_a_title()
     {
-        $article = factory(Article::class)->create(['title' => 'Fake Title']);
+        $article = factory(Blog::class)->create(['title' => 'Fake Title']);
         $this->assertEquals('Fake Title', $article->title);
     }
 
@@ -23,7 +23,7 @@ class ArticlesTest extends TestCase
     /** @test */
     /*function a_article_has_a_body()
     {
-        $article = factory(Article::class)->create([
+        $article = factory(Blog::class)->create([
             "body" => "Fake Body"
         ]);
        $this->assertEquals('Fake Title', $article->body);
@@ -33,14 +33,14 @@ class ArticlesTest extends TestCase
     /*function a_article_has_an_author_id()
     {
         // Note that we are not assuming relations here, just that we have a column to store the 'id' of the author
-        $article = factory(Article::class)->create(['author_id' => 'Fake\Admin']); // we choose an off-limits value for the author_id so it is unlikely to collide with another author_id in our tests
+        $article = factory(Blog::class)->create(['author_id' => 'Fake\Admin']); // we choose an off-limits value for the author_id so it is unlikely to collide with another author_id in our tests
         $this->assertEquals(999, $article->author_id);
     }*/
 
     /** @test */
   /* function a_article_has_an_author_type()
     {
-        $article = factory(Article::class)->create(['author_type' => 'Fake\User']);
+        $article = factory(Blog::class)->create(['author_type' => 'Fake\User']);
         $this->assertEquals('Fake\User', $article->author_type);
     }*/
 
@@ -55,7 +55,7 @@ class ArticlesTest extends TestCase
             'body'  => 'The body of this fake post',
         ]);
 
-        $this->assertCount(1, Article::all());
+        $this->assertCount(1, Blog::all());
         $this->assertCount(1, $author->articles);
 
         // Using tap() to alias $author->posts()->first() to $post

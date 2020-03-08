@@ -4,13 +4,13 @@
 namespace Soguitech\Stadmin\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
-use Soguitech\Stadmin\Models\Article;
+use Soguitech\Stadmin\Models\Blog;
 
 class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::all();
+        $articles = Blog::all();
 
         return view('stadmin::articles.index', compact('articles'));
     }
@@ -20,9 +20,9 @@ class ArticleController extends Controller
         return view('stadmin::articles.create');
     }
 
-    public function show(Article $article)
+    public function show(Blog $article)
     {
-        //$article = Article::findOrFail(request('article'));
+        //$article = Blog::findOrFail(request('article'));
 
         return view('stadmin::articles.show', compact('article'));
     }

@@ -3,7 +3,7 @@
 namespace Soguitech\Stadmin\Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Soguitech\Stadmin\Models\Article;
+use Soguitech\Stadmin\Models\Blog;
 use Soguitech\Stadmin\Tests\TestCase;
 use Soguitech\Stadmin\Tests\User;
 
@@ -15,7 +15,7 @@ class CreateArticleTest extends TestCase
     public function authenticated_users_can_create_a_article()
     {
         // To make sure we don't start with a Post
-        $this->assertCount(0, Article::all());
+        $this->assertCount(0, Blog::all());
 
         $author = factory(User::class)->create();
 
@@ -24,9 +24,9 @@ class CreateArticleTest extends TestCase
             'body'  => 'My first fake body',
         ]);
 
-        $this->assertCount(1, Article::all());
+        $this->assertCount(1, Blog::all());
 
-        tap(Article::first(), function ($article) use ($response, $author) {
+        tap(Blog::first(), function ($article) use ($response, $author) {
             $this->assertEquals('My first fake title', $article->title);
             $this->assertEquals('My first fake body', $article->body);
             $this->assertTrue($article->author->is($author));
@@ -65,13 +65,13 @@ class CreateArticleTest extends TestCase
     function all_articles_are_shown_via_the_index_route()
     {
         // Given we have a couple of Posts
-        factory(Article::class)->create([
+        factory(Blog::class)->create([
             'title' => 'Post number 1'
         ]);
-        factory(Article::class)->create([
+        factory(Blog::class)->create([
             'title' => 'Post number 2'
         ]);
-        factory(Article::class)->create([
+        factory(Blog::class)->create([
             'title' => 'Post number 3'
         ]);
 
@@ -87,7 +87,7 @@ class CreateArticleTest extends TestCase
     /** @test */
     function a_single_article_is_shown_via_the_show_route()
     {
-        $post = factory(Article::class)->create([
+        $post = factory(Blog::class)->create([
             'title' => 'The single post title',
             'body'  => 'The single post body',
         ]);

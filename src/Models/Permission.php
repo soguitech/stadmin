@@ -6,48 +6,49 @@ namespace Soguitech\Stadmin\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use Soguitech\Stadmin\Exceptions\PermissionDoesNotExist;
-use Soguitech\Stadmin\Guard;
-use Soguitech\Stadmin\PermissionRegistrar;
+use Soguitech\Stadmin\Repositories\PermissionRepository;
 use Soguitech\Stadmin\Traits\HasRoles;
 
-class Permission extends Model implements \Soguitech\Stadmin\Contracts\Permission
+class Permission extends Model
 {
     use HasRoles;
 
     protected $guarded = ['id'];
 
-    public function __construct(array $attributes = [])
-    {
-        $attributes['guard_name'] = $attributes['guard_name'] ?? config('auth.defaults.guard');
+    public $timestamps = false;
+    /**
+     * @var PermissionRepository
+     */
+    private $permissionRepository;
 
+    public function __construct(PermissionRepository $permissionRepository, array $attributes = [])
+    {
         parent::__construct($attributes);
 
         $this->setTable(config('stadmin.table_names.permissions'));
+        $this->permissionRepository = $permissionRepository;
     }
 
-    public static function create(array $attributes = [])
+    public function create(array $attributes = [])
     {
-        $attributes['guard_name'] = $attributes['guard_name'] ?? Guard::getDefaultName(static::class);
 
-       // dd(Guard::getDefaultName(static::class));
-
-        $permission = static::getPermissions(['name' => $attributes['name'], 'guard_name' => $attributes['guard_name']])->first();
+        //$permission = static::getPermissions(['name' => $attributes['name']])->first();
+       /* $permission = $this->permissionRepository->getPermissions($attributes['name']);
 
         if ($permission) {
-            throw PermissionAlreadyExists::create($attributes['name'], $attributes['guard_name']);
-        }
+            throw PermissionAlreadyExists::create($attributes['name']);
+        }*/
 
-       // dd($attributes);
+        return $this->permissionRepository->create($attributes);
 
-        return static::query()->create($attributes);
+        //return static::query()->create($attributes);
     }
 
+
     /**
-     * @return BelongsToMany|MorphToMany
+     * @return BelongsToMany
      */
-    public function roles(): BelongsToMany
+    public function roles () : BelongsToMany
     {
         return $this->belongsToMany(
             config('stadmin.models.role'),
@@ -57,70 +58,54 @@ class Permission extends Model implements \Soguitech\Stadmin\Contracts\Permissio
         );
     }
 
-    public function users(): MorphToMany
+    /**
+     * @return BelongsToMany
+     */
+    public function users ()
     {
-        return $this->morphedByMany(
-            getModelForGuard($this->attributes['guard_name']),
-            'model',
-            config('stadmin.table_names.model_has_permissions'),
+        return $this->belongsToMany(
+            config('stadmin.models.user'),
+            config('stadmin.table_names.user_has_permissions'),
             'permission_id',
-            config('stadmin.column_names.model_morph_key')
+            'admin_id'
         );
     }
 
-
-    /**
-     * @inheritDoc
-     */
-    public static function findByName(string $name, $guardName): \Soguitech\Stadmin\Contracts\Permission
+    public function findByName (string $name)
     {
-        $guardName = $guardName ?? Guard::getDefaultName(static::class);
-        $permission = static::getPermissions(['name' => $name, 'guard_name' => $guardName])->first();
-        if (! $permission) {
-            throw PermissionDoesNotExist::create($name, $guardName);
+        return $this->permissionRepository->findByName($name);
+
+       /* if (! $permission) {
+            throw PermissionDoesNotExist::create($name);
         }
 
-        return $permission;
+        return $permission;*/
     }
 
-    /**
-     * @inheritDoc
-     */
-    public static function findById(int $id, $guardName): \Soguitech\Stadmin\Contracts\Permission
+    public function findById(int $id)
     {
-        $guardName = $guardName ?? Guard::getDefaultName(static::class);
+        return $this->permissionRepository->findById($id);
+       /* $guardName = $guardName ?? Guard::getDefaultName(static::class);
         $permission = static::getPermissions(['id' => $id, 'guard_name' => $guardName])->first();
 
         if (! $permission) {
             throw PermissionDoesNotExist::withId($id, $guardName);
         }
 
-        return $permission;
+        return $permission;*/
     }
 
-    /**
-     * @inheritDoc
-     */
-    public static function findOrCreate(string $name, $guardName): \Soguitech\Stadmin\Contracts\Permission
+    public function findOrCreate(string $name)
     {
-        $guardName = $guardName ?? Guard::getDefaultName(static::class);
+        return $this->permissionRepository->findOrCreate($name);
+
+        /*$guardName = $guardName ?? Guard::getDefaultName(static::class);
         $permission = static::getPermissions(['name' => $name, 'guard_name' => $guardName])->first();
 
         if (! $permission) {
             return static::query()->create(['name' => $name, 'guard_name' => $guardName]);
         }
 
-        return $permission;
-    }
-
-    /**
-     * @param array $params
-     * @return mixed
-     */
-    protected static function getPermissions(array $params = [])
-    {
-        return app(PermissionRegistrar::class)
-            ->setPermissionClass(static::class)
-            ->getPermissions($params);
+        return $permission;*/
     }
 }

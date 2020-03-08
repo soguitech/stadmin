@@ -2,11 +2,11 @@
 
 namespace Soguitech\Stadmin\Database\Factories;
 
-use Soguitech\Stadmin\Models\Article;
+use Soguitech\Stadmin\Models\Blog;
 use Faker\Generator as Faker;
 use Soguitech\Stadmin\Tests\User;
 
-$factory->define(Article::class, function (Faker $faker) {
+$factory->define(Blog::class, function (Faker $faker) {
     $author = factory(User::class)->create();
 
     return [

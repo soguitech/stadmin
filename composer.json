@@ -35,7 +35,10 @@
         "laravel": {
             "providers": [
                 "Soguitech\\Stadmin\\StadminServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Admin": "Soguitech\\Stadmin\\Facades\\Admin"
+            }
         }
     }
 }

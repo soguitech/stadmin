@@ -19,40 +19,34 @@ Run following command to finish install.
     php artisan stadmin:install
 ```
 
-## routes file
-In your web file add this code below :
+## Configure Auth guard
+Inside the `config/auth.php` file you will need to make a few changes to configure Laravel to use the **stadmin** guard to power your application authentication.
+
+Make the following changes to the file:
 
 ```php
-    Route::get(config('stadmin.route.prefix') . '/{any}', function () {
-        return view('vendor/stadmin/welcome');
-    })->where('any', '.*');
+    'guards' => [
+        // ...
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+    ],
+
+     'providers' => [
+        // ...
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => Soguitech\Stadmin\Models\Auth\Admin::class,
+        ],
+    ],
+
+    'passwords' => [
+        // ...
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+    ],
 ```
-
-## Composer file
-Add these below packages to your `package.json` file in dependencies :
-
-```composer log
-    "@vue/composition-api": "^0.3.4",
-    "element-ui": "^2.13.0",
-    "laravel-echo": "^1.6.0",
-    "link-prevue": "^1.1.3",
-    "loadash": "^1.0.0",
-    "moment": "^2.24.0",
-    "nprogress": "^0.2.0",
-    "socket.io-client": "^2.2.0",
-    "vue-avatar": "^2.1.8",
-    "vue-chat-scroll": "^1.3.5",
-    "vue-router": "^3.1.3",
-    "vue-runtime-helpers": "^1.1.2",
-    "vuex": "^3.1.1"
-```
-Run `npm install` or `yarn install`.
-
-## Webpack file
-Update your application's `webpack.mix.js` file to this :
-
-```javascript
-mix.js('resources/js/vendor/stadmin/app.js',
-    'public/js/vendor/stadmin')
-```
-and run `npm run dev`.

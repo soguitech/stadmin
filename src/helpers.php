@@ -18,3 +18,42 @@ if (! function_exists('getModelForGuard')) {
             })->get($guard);
     }
 }
+
+if (!function_exists('stadmin_css_asset')) {
+
+    /**
+     * @param $path
+     *
+     * @return string
+     */
+    function stadmin_css_asset($path)
+    {
+        return config('stadmin.https') ? secure_asset('css/vendor/stadmin/' . $path) : asset('css/vendor/stadmin/' . $path);
+    }
+}
+
+if (!function_exists('stadmin_js_asset')) {
+
+    /**
+     * @param $path
+     *
+     * @return string
+     */
+    function stadmin_js_asset($path)
+    {
+        return config('stadmin.https') ? secure_asset('js/vendor/stadmin/' . $path) : asset('js/vendor/stadmin/' . $path);
+    }
+}
+
+if (!function_exists('stadmin_img_asset')) {
+
+    /**
+     * @param $path
+     *
+     * @return string
+     */
+    function stadmin_img_asset($path)
+    {
+        return config('stadmin.https') ? secure_asset('img/vendor/stadmin/' . $path) : asset('img/vendor/stadmin/' . $path);
+    }
+}

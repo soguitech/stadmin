@@ -1,0 +1,87 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateZForeignKeys extends Migration
+{
+
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        $tableNames = config('stadmin.table_names');
+
+        Schema::table($tableNames['blogs'], function (Blueprint $table) use ($tableNames) {
+            $table->foreign('author_id')
+                ->references('id')
+                ->on($tableNames['users'])
+                ->onDelete('cascade');
+
+            $table->foreign('category_id')
+                ->references('id')
+                ->on($tableNames['categories'])
+                ->onDelete('cascade');
+        });
+
+        Schema::create($tableNames['blog_has_tag'], function (Blueprint $table) use ($tableNames) {
+            $table->unsignedBigInteger('blog_id');
+            $table->unsignedBigInteger('tag_id');
+
+            $table->foreign('blog_id')
+                ->references('id')
+                ->on($tableNames['blogs'])
+                ->onDelete('cascade');
+
+            $table->foreign('tag_id')
+                ->references('id')
+                ->on($tableNames['tags'])
+                ->onDelete('cascade');
+
+            $table->primary(['blog_id', 'tag_id'], 'blog_tag_blog_id_tag_id_primary');
+        });
+
+         Schema::table($tableNames['clients'], function (Blueprint $table) use ($tableNames) {
+            $table->foreign('admin_id')
+                ->references('id')
+                ->on($tableNames['users'])
+                ->onDelete('restrict');
+        });
+
+        Schema::table($tableNames['projects'], function (Blueprint $table) use ($tableNames) {
+            $table->foreign('client_id')
+                ->references('id')
+                ->on($tableNames['clients'])
+                ->onDelete('restrict');
+        });
+
+        Schema::table($tableNames['teams'], function (Blueprint $table) use ($tableNames) {
+            $table->foreign('team_lead_id')
+                ->references('id')
+                ->on($tableNames['users'])
+                ->onDelete('restrict');
+
+            $table->foreign('project_id')
+                ->references('id')
+                ->on($tableNames['projects'])
+                ->onDelete('restrict');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        $tableNames = config('stadmin.table_names');
+
+        Schema::dropIfExists($tableNames['blog_has_tag']);
+    }
+}

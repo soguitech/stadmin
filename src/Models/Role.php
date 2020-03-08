@@ -7,37 +7,48 @@ use Illuminate\Database\Eloquent\Model;
 use Soguitech\Stadmin\Exceptions\GuardDoesNotMatch;
 use Soguitech\Stadmin\Exceptions\RoleAlreadyExists;
 use Soguitech\Stadmin\Exceptions\RoleDoesNotExist;
-use Soguitech\Stadmin\Contracts\Permission;
 use Soguitech\Stadmin\Guard;
+use Soguitech\Stadmin\Repositories\RoleRepository;
+use Soguitech\Stadmin\Models\Permission;
 use Soguitech\Stadmin\Traits\HasPermissions;
 use Soguitech\Stadmin\Traits\RefreshesPermissionCache;
 
-class Role extends Model implements \Soguitech\Stadmin\Contracts\Role {
-    use HasPermissions, RefreshesPermissionCache;
+class Role extends Model {
+    //use HasPermissions, RefreshesPermissionCache;
 
     protected $guarded = ['id'];
+    /**
+     * @var RoleRepository
+     */
+    private $roleRepository;
 
-    public function __construct(array $attributes = [])
+    /**
+     * Role constructor.
+     * @param RoleRepository $roleRepository
+     * @param array $attributes
+     */
+    public function __construct(RoleRepository $roleRepository, array $attributes = [])
     {
-        $attributes['guard_name'] = $attributes['guard_name'] ?? config('auth.defaults.guard');
 
         parent::__construct($attributes);
 
         $this->setTable(config('stadmin.table_names.roles'));
+        $this->roleRepository = $roleRepository;
     }
 
-    public static function create(array $attributes = [])
+    public function create(array $attributes = [])
     {
-        $attributes['guard_name'] = $attributes['guard_name'] ?? Guard::getDefaultName(static::class);
+        return $this->roleRepository->create($attributes);
+       /* $attributes['guard_name'] = $attributes['guard_name'] ?? Guard::getDefaultName(static::class);
 
         if (static::where('name', $attributes['name'])->where('guard_name', $attributes['guard_name'])->first()) {
             throw RoleAlreadyExists::create($attributes['name'], $attributes['guard_name']);
         }
 
-        return static::query()->create($attributes);
+        return static::query()->create($attributes);*/
     }
 
-    public function permissions(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function permissions()
     {
         return $this->belongsToMany(
             config('stadmin.models.permission'),
@@ -47,14 +58,13 @@ class Role extends Model implements \Soguitech\Stadmin\Contracts\Role {
         );
     }
 
-    public function users(): \Illuminate\Database\Eloquent\Relations\MorphToMany
+    public function users()
     {
-        return $this->morphedByMany(
-            getModelForGuard($this->attributes['guard_name']),
-            'model',
-            config('stadmin.table_names.model_has_roles'),
+        return $this->belongsToMany(
+            config('stadmin.models.user'),
+            config('stadmin.table_names.user_has_roles'),
             'role_id',
-            config('stadmin.column_names.model_morph_key')
+            'admin_id'
         );
     }
 
@@ -63,12 +73,11 @@ class Role extends Model implements \Soguitech\Stadmin\Contracts\Role {
         return $this->permissions()->save($permission);
     }
 
-    /**
-     * @inheritDoc
-     */
-    public static function findByName(string $name, $guardName): \Soguitech\Stadmin\Contracts\Role
+    public function findByName(string $name)
     {
-        $guardName = $guardName ?? Guard::getDefaultName(static::class);
+        return $this->roleRepository->findByName($name);
+
+        /*$guardName = $guardName ?? Guard::getDefaultName(static::class);
 
         $role = static::where('name', $name)->where('guard_name', $guardName)->first();
 
@@ -76,15 +85,13 @@ class Role extends Model implements \Soguitech\Stadmin\Contracts\Role {
             throw RoleDoesNotExist::named($name);
         }
 
-        return $role;
+        return $role;*/
     }
 
-    /**
-     * @inheritDoc
-     */
-    public static function findById(int $id, $guardName): \Soguitech\Stadmin\Contracts\Role
+    public function findById(int $id)
     {
-        $guardName = $guardName ?? Guard::getDefaultName(static::class);
+        return $this->roleRepository->findById($id);
+        /*$guardName = $guardName ?? Guard::getDefaultName(static::class);
 
         $role = static::where('id', $id)->where('guard_name', $guardName)->first();
 
@@ -92,15 +99,13 @@ class Role extends Model implements \Soguitech\Stadmin\Contracts\Role {
             throw RoleDoesNotExist::withId($id);
         }
 
-        return $role;
+        return $role;*/
     }
 
-    /**
-     * @inheritDoc
-     */
-    public static function findOrCreate(string $name, $guardName): \Soguitech\Stadmin\Contracts\Role
+    public function findOrCreate(string $name)
     {
-        $guardName = $guardName ?? Guard::getDefaultName(static::class);
+        return $this->roleRepository->findOrCreate($name);
+       /* $guardName = $guardName ?? Guard::getDefaultName(static::class);
 
         $role = static::where('name', $name)->where('guard_name', $guardName)->first();
 
@@ -108,13 +113,11 @@ class Role extends Model implements \Soguitech\Stadmin\Contracts\Role {
             return static::query()->create(['name' => $name, 'guard_name' => $guardName]);
         }
 
-        return $role;
+        return $role;*/
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function hasPermissionTo($permission): bool
+
+   /* public function hasPermissionTo($permission): bool
     {
         $permissionClass = $this->getPermissionClass();
 
@@ -131,5 +134,5 @@ class Role extends Model implements \Soguitech\Stadmin\Contracts\Role {
         }
 
         return $this->permissions->contains('id', $permission->id);
-    }
+    }*/
 }

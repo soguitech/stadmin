@@ -1,50 +1,99 @@
 <?php
 
 return [
+    'title' => 'SOGUITECH',
+    'nav_bar_title' => 'SOGUITECH',
+    'path_nav_bar_img' => env('STADMIN_PATH_NAV_BAR_IMG', ''),
 
-    'route' => [
-        'prefix' => env('STADMIN_ROUTE_PREFIX', 'stadmin'),
-        'middleware' => ['web', 'admin']
+    'auth' => [
+        'username' => 'email',
+
+        'controller' => Soguitech\Stadmin\Http\Controllers\AuthController::class,
+
+        'guard' => 'admin',
+
+        'guards' => [
+            'admin' => [
+                'driver'   => 'session',
+                'provider' => 'admin',
+            ]
+        ],
+
+        'providers' => [
+            'admin' => [
+                'driver' => 'eloquent',
+                'model'  => Soguitech\Stadmin\Models\Auth\Admin::class,
+            ]
+        ],
+
+        // Add "remember me" to login form
+        'remember' => true,
+
+        // Redirect to the specified URI when user is not authorized.
+       // 'redirect_to' => route('stadmin.showLoginForm'),
+
+        // The URIs that should be excluded from authorization.
+       /* 'excepts' => [
+            route('stadmin.showLoginForm'),
+        ]*/
     ],
 
     'models' => [
-        'article' => Soguitech\Stadmin\Models\Article::class,
+        'blog' => Soguitech\Stadmin\Models\Blog::class,
         'permission' => Soguitech\Stadmin\Models\Permission::class,
         'role' => Soguitech\Stadmin\Models\Role::class,
+        'project' => Soguitech\Stadmin\Models\Project::class,
+        'user' => Soguitech\Stadmin\Models\Auth\Admin::class,
+        'tag' => Soguitech\Stadmin\Models\Tag::class,
+        'category' => Soguitech\Stadmin\Models\Category::class,
+
     ],
 
     'table_names' => [
 
-
-        'articles' => 'articles',
+        'blogs' => 'blogs',
+        'categories' => 'categories',
         'roles' => 'roles',
+        'tags' => 'tags',
+        'projects' => 'projects',
+        'teams' => 'teams',
+        'clients' => 'clients',
         'permissions' => 'permissions',
-        'admin_users' => 'admin_users',
+        'users' => 'admins',
 
 
-        'model_has_articles' => 'model_has_articles',
-        'model_has_permissions' => 'model_has_permissions',
-        'model_has_roles' => 'model_has_roles',
-        'role_has_permissions' => 'role_has_permissions',
+        'model_has_articles' => 'admin_article',
+        'blog_has_tag' => 'blog_tag',
+        'user_has_permissions' => 'admin_permission',
+        'user_has_roles' => 'admin_role',
+        'role_has_permissions' => 'permission_role',
+    ],
 
+    'route' => [
+        'prefix' => env('STADMIN_ROUTE_PREFIX', 'stadmin'),
+        'loginRoute' => config('stadmin.route.prefix') . '/login',
+        'dashRoute' => config('stadmin.route.prefix') . '/dashboard'
+    ],
+
+    'path_logo_img' => env('STADMIN_PATH_LOGO_IMG', '/img/vendor/stadmin/logo.png'),
+
+    'database' => [
+        // Database connection for following tables.
+        'connection' => '',
     ],
 
     'column_names' => [
-
         'model_morph_key' => 'model_id',
     ],
 
     'https' => env('ADMIN_HTTPS', false),
 
-    'default_avatar' => '/vendor/laravel-admin/AdminLTE/dist/img/user2-160x160.jpg',
+    'login_background_image' => '',
+
+    'default_avatar' => '/img/vendor/stadmin/avatar/200x200.jpg',
 
     'check_route_permission' => true,
 
-    /*
-    |--------------------------------------------------------------------------
-    | Indicates whether to check menu roles.
-    |--------------------------------------------------------------------------
-    */
     'check_menu_roles'       => true,
 
     'skin' => 'skin-blue-light',

@@ -2,14 +2,21 @@
 
 namespace Soguitech\Stadmin;
 
+use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Soguitech\Stadmin\Console\InstallStadmin;
+use Soguitech\Stadmin\Middlewares\StadminAuth;
+use Soguitech\Stadmin\Middlewares\StadminGuest;
 
 class StadminServiceProvider extends ServiceProvider
 {
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/stadmin.php', 'stadmin');
+        $this->app->bind('admin', function($app) {
+            return new \Soguitech\Stadmin\Admin();
+        });
     }
 
     public function boot()
@@ -18,7 +25,14 @@ class StadminServiceProvider extends ServiceProvider
 
         $this->ensureHttps();
 
-        $this->loadRoutesFrom(__DIR__.'../../routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+
+        try {
+            $router = $this->app->make(Router::class);
+            $router->aliasMiddleware('stadmin.guest', StadminGuest::class);
+            $router->aliasMiddleware('stadmin.auth', StadminAuth::class);
+        } catch (BindingResolutionException $e) {
+        }
 
         if ($this->app->runningInConsole()) {
 
@@ -29,17 +43,21 @@ class StadminServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/../public/js' => public_path('js/vendor/stadmin'),
                 __DIR__.'/../public/css' => public_path('css/vendor/stadmin'),
-                __DIR__.'/../public/scss' => public_path('css/vendor/scss')
+                __DIR__.'/../public/scss' => public_path('scss/vendor/stadmin'),
+                __DIR__.'/../public/img' => public_path('img/vendor/stadmin'),
+                __DIR__.'/../public/fonts' => public_path('fonts/vendor/stadmin')
             ], 'assets');
             $this->publishes([
-                __DIR__.'/../resources/js' => resource_path('js/vendor/stadmin'),
-                __DIR__.'/../resources/css' => resource_path('css/vendor/stadmin'),
-            ], 'vue-component');
-            $this->publishes([
-                __DIR__ . '/../database/migrations/create_articles_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_articles_table.php'),
-                __DIR__ . '/../database/migrations/create_roles_permissions_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_roles_permissions_table.php')
+                __DIR__ . '/../database/migrations/create_admins_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_admins_table.php'),
+                __DIR__ . '/../database/migrations/create_blogs_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_blogs_table.php'),
+                __DIR__ . '/../database/migrations/create_categories_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_categories_table.php'),
+                __DIR__ . '/../database/migrations/create_clients_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_clients_table.php'),
+                __DIR__ . '/../database/migrations/create_projects_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_projects_table.php'),
+                __DIR__ . '/../database/migrations/create_roles_permissions_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_roles_permissions_table.php'),
+                __DIR__ . '/../database/migrations/create_tags_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_tags_table.php'),
+                __DIR__ . '/../database/migrations/create_teams_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_teams_table.php'),
+                __DIR__ . '/../database/migrations/create_z_foreign_keys.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_z_foreign_keys.php'),
             ], 'migrations');
-
         }
     }
 
@@ -50,5 +68,4 @@ class StadminServiceProvider extends ServiceProvider
             $this->app['request']->server->set('HTTPS', true);
         }
     }
-
 }
