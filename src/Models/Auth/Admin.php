@@ -38,4 +38,19 @@ class Admin extends Model implements AuthorizableContract, AuthenticatableContra
             'admin_id'
         );
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(
+            config('stadmin.models.role'),
+            config('stadmin.table_names.user_has_roles'),
+            'role_id',
+            'admin_id'
+        );
+    }
+
+    public function statuts ()
+    {
+        return $this->belongsTo(config('stadmin.models.statuts'));
+    }
 }

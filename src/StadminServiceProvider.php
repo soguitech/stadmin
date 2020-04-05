@@ -54,6 +54,7 @@ class StadminServiceProvider extends ServiceProvider
                 __DIR__ . '/../database/migrations/create_clients_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_clients_table.php'),
                 __DIR__ . '/../database/migrations/create_projects_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_projects_table.php'),
                 __DIR__ . '/../database/migrations/create_roles_permissions_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_roles_permissions_table.php'),
+                __DIR__ . '/../database/migrations/create_statuts_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_statuts_table.php'),
                 __DIR__ . '/../database/migrations/create_tags_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_tags_table.php'),
                 __DIR__ . '/../database/migrations/create_teams_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_teams_table.php'),
                 __DIR__ . '/../database/migrations/create_z_foreign_keys.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_z_foreign_keys.php'),

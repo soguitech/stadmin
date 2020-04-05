@@ -1,264 +1,172 @@
-<div class="sidemenu-area">
-    <div class="sidemenu-header">
-        <a href="dashboard-ecommerce.html" class="navbar-brand d-flex align-items-center">
-            @if(config('stadmin.path_nav_bar_img'))
-                <img src="{{ asset(config('stadmin.path_nav_bar_img')) }}" alt="image">
-            @endif
-            <span>{{ ucfirst(config('stadmin.title')) }}</span>
-        </a>
-
-        <div class="burger-menu d-none d-lg-block">
-            <span class="top-bar"></span>
-            <span class="middle-bar"></span>
-            <span class="bottom-bar"></span>
+<div id="left-sidebar" class="sidebar">
+    <div class="sidebar-scroll">
+        <div class="user-account">
+            <img src="http://www.wrraptheme.com/templates/lucid/hr/html/assets/images/user.png" class="rounded-circle user-photo" alt="User Profile Picture">
+            <div class="dropdown">
+                <span>Bienvenue,</span>
+                <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>{{ stadmin_auth()->firstName }} {{ stadmin_auth()->lastName }}</strong></a>
+                <ul class="dropdown-menu dropdown-menu-right account animated flipInY">
+                    <li><a href="page-profile2.html"><i class="icon-user"></i>Mon Profil</a></li>
+                    <li><a href="app-inbox.html"><i class="icon-envelope-open"></i>Messages</a></li>
+                    <li><a href="javascript:void(0);"><i class="icon-settings"></i>Paramètres</a></li>
+                    <li class="divider"></li>
+                    <li>
+                        <a class="dropdown-item" href="{{ route('stadmin.logout') }}"
+                           onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            {{ __('Deconnexion') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('stadmin.logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <h6>5+</h6>
+                    <small>Experience</small>
+                </div>
+                <div class="col-4">
+                    <h6>80+</h6>
+                    <small>Clients</small>
+                </div>
+            </div>
         </div>
-
-        <div class="responsive-burger-menu d-block d-lg-none">
-            <span class="top-bar"></span>
-            <span class="middle-bar"></span>
-            <span class="bottom-bar"></span>
-        </div>
-    </div>
-
-    <div class="sidemenu-body">
-        <ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar>
-            <li class="nav-item-title">
-                Main
-            </li>
-
-            <li class="nav-item mm-active">
-                <a href="#" class="nav-link">
-                    <span class="icon"><i class='bx bx-file'></i></span>
-                    <span class="menu-title">Tableau de bord</span>
-                </a>
-            </li>
-
-            <li class="nav-item-title">Apps</li>
-
-            <li class="nav-item">
-                <a href="#" class="collapsed-nav-link nav-link" aria-expanded="false">
-                    <span class="icon"><i class='bx bx-envelope'></i></span>
-                    <span class="menu-title">Contacts</span>
-                    <span class="badge">0</span>
-                </a>
-
-                <ul class="sidemenu-nav-second-level">
-                    <li class="nav-item">
-                        <a href="app-email.html" class="nav-link">
-                            <span class="icon"><i class='bx bxs-inbox'></i></span>
-                            <span class="menu-title">Reception</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="email-read.html" class="nav-link">
-                            <span class="icon"><i class='bx bxs-badge-check'></i></span>
-                            <span class="menu-title">Lus</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="email-compose.html" class="nav-link">
-                            <span class="icon"><i class='bx bx-send'></i></span>
-                            <span class="menu-title">Ecrire</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a href="app-chat.html" class="nav-link">
-                    <span class="icon"><i class='bx bx-message'></i></span>
-                    <span class="menu-title">Chat</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="app-todo.html" class="nav-link">
-                    <span class="icon"><i class='bx bx-badge-check'></i></span>
-                    <span class="menu-title">Tâches</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="app-calendar.html" class="nav-link">
-                    <span class="icon"><i class='bx bx-calendar'></i></span>
-                    <span class="menu-title">Calendrier</span>
-                </a>
-            </li>
-
-            <li class="nav-item-title">Autres</li>
-
-            <li class="nav-item">
-                <a href="grid.html" class="nav-link">
-                    <span class="icon"><i class='bx bx-menu'></i></span>
-                    <span class="menu-title">Catégories</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="colors.html" class="nav-link">
-                    <span class="icon"><i class='bx bxs-tag'></i></span>
-                    <span class="menu-title">Tags</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="collapsed-nav-link nav-link" aria-expanded="false">
-                    <span class="icon"><i class='bx bxs-news'></i></span>
-                    <span class="menu-title">Articles</span>
-                </a>
-
-                <ul class="sidemenu-nav-second-level">
-                    <li class="nav-item">
-                        <a href="boxicons.html" class="nav-link">
-                            <span class="icon"><i class='bx bxs-file'></i></span>
-                            <span class="menu-title">Tous les articles</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="feathericons.html" class="nav-link">
-                            <span class="icon"><i class='bx bx-edit'></i></span>
-                            <span class="menu-title">Ajouter un article</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="collapsed-nav-link nav-link" aria-expanded="false">
-                    <span class="icon"><i class='bx bxs-user'></i></span>
-                    <span class="menu-title">Utilisateurs</span>
-                </a>
-
-                <ul class="sidemenu-nav-second-level">
-                    <li class="nav-item">
-                        <a href="basic-card.html" class="nav-link">
-                            <span class="icon"><i class='bx bx-user'></i></span>
-                            <span class="menu-title">Tous les utilisateurs</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="colors-card.html" class="nav-link">
-                            <span class="icon"><i class='bx bx-user-plus'></i></span>
-                            <span class="menu-title">Ajouter un utilisateur</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="collapsed-nav-link nav-link" aria-expanded="false">
-                    <span class="icon"><i class='bx bxs-lock-alt'></i></span>
-                    <span class="menu-title">Rôles</span>
-                </a>
-
-                <ul class="sidemenu-nav-second-level">
-                    <li class="nav-item">
-                        <a href="alerts.html" class="nav-link">
-                            <span class="icon"><i class='bx bx-lock-alt'></i></span>
-                            <span class="menu-title">Tous les rôles</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="badges.html" class="nav-link">
-                            <span class="icon"><i class='bx bx-right-arrow-alt'></i></span>
-                            <span class="menu-title">Ajouter un rôle</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a href="colors.html" class="nav-link">
-                    <span class="icon"><i class='bx bx-shield-quarter'></i></span>
-                    <span class="menu-title">Permissions</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="collapsed-nav-link nav-link" aria-expanded="false">
-                    <span class="icon"><i class='bx bxs-folder'></i></span>
-                    <span class="menu-title">Projets</span>
-                </a>
-
-                <ul class="sidemenu-nav-second-level">
-                    <li class="nav-item">
-                        <a href="alerts.html" class="nav-link">
-                            <span class="icon"><i class='bx bx-folder'></i></span>
-                            <span class="menu-title">Tous les projets</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="badges.html" class="nav-link">
-                            <span class="icon"><i class='bx bx-folder-plus'></i></span>
-                            <span class="menu-title">Ajouter un projet</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="collapsed-nav-link nav-link" aria-expanded="false">
-                    <span class="icon"><i class='bx bxs-camera'></i></span>
-                    <span class="menu-title">Media</span>
-                </a>
-
-                <ul class="sidemenu-nav-second-level">
-                    <li class="nav-item">
-                        <a href="alerts.html" class="nav-link">
-                            <span class="icon"><i class='bx bx-right-arrow-alt'></i></span>
-                            <span class="menu-title">Bibliothèque</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="badges.html" class="nav-link">
-                            <span class="icon"><i class='bx bx-images'></i></span>
-                            <span class="menu-title">Gallerie</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="badges.html" class="nav-link">
-                            <span class="icon"><i class='bx bx-image-add'></i></span>
-                            <span class="menu-title">Ajouter</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a href="#" class="collapsed-nav-link nav-link" aria-expanded="false">
-                    <span class="icon"><i class='bx bxs-user-pin'></i></span>
-                    <span class="menu-title">Clients</span>
-                </a>
-
-                <ul class="sidemenu-nav-second-level">
-                    <li class="nav-item">
-                        <a href="alerts.html" class="nav-link">
-                            <span class="icon"><i class='bx bx-user-pin'></i></span>
-                            <span class="menu-title">Tous les clients</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="badges.html" class="nav-link">
-                            <span class="icon"><i class='bx bxs-user-plus'></i></span>
-                            <span class="menu-title">Ajouter un client</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a href="forms.html" class="nav-link">
-                    <span class="menu-title">Open source packages</span>
-                </a>
-            </li>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sub_menu"><i class="icon-grid"></i></a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#project_menu">Projet</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting"><i class="icon-settings"></i></a></li>
         </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content p-l-0 p-r-0">
+            <div class="tab-pane animated fadeIn active" id="sub_menu">
+                <nav class="sidebar-nav">
+                    <ul class="main-menu metismenu">
+                        <li>
+                            <a href="#Blog" class="has-arrow"><i class="icon-globe"></i> <span>Blog</span></a>
+                            <ul>
+                                <li><a href="blog-dashboard.html">Tableau de bord</a></li>
+                                <li><a href="blog-post.html">Nouveau post</a></li>
+                                <li><a href="blog-list.html">Tous les blogs</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#FileManager" class="has-arrow"><i class="icon-folder"></i> <span>Gestion des fichiers</span></a>
+                            <ul>
+                                <li><a href="file-dashboard.html">Tableau de bord</a></li>
+                                <li><a href="file-documents.html">Documents</a></li>
+                                <li><a href="file-media.html">Media</a></li>
+                                <li><a href="file-images.html">Images</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ route('stadmin.users') }}"><i class="icon-users"></i>Utilisateurs</a></li>
+                        <li><a href="project-team.html"><i class="icon-users"></i>Categories</a></li>
+                        <li><a href="project-team.html"><i class="icon-users"></i>Tags</a></li>
+                        <li><a href="{{ route('stadmin.roles') }}"><i class="icon-users"></i>Rôles</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="tab-pane animated fadeIn" id="project_menu">
+                <nav class="sidebar-nav">
+                    <ul class="main-menu metismenu">
+                        <li><a href="index2.html"><i class="icon-speedometer"></i><span>Tableau de bord</span></a></li>
+                        <li><a href="app-inbox.html"><i class="icon-envelope"></i>Inbox</a></li>
+                        <li><a href="app-chat.html"><i class="icon-bubbles"></i>Chat</a></li>
+                        <li>
+                            <a href="#Projects" class="has-arrow"><i class="icon-list"></i><span>Projets</span></a>
+                            <ul>
+                                <li><a href="project-add.html">Ajout de Projet</a></li>
+                                <li><a href="project-list.html">Tous les Projets</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Clients" class="has-arrow"><i class="icon-user"></i><span>Clients</span></a>
+                            <ul>
+                                <li><a href="client-add.html">Ajout de Client</a></li>
+                                <li><a href="client-list.html">Tous les Clients</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="project-team.html"><i class="icon-users"></i>Equipe</a></li>
+                        <li><a href="app-taskboard.html"><i class="icon-tag"></i>Taskboard</a></li>
+                        <li><a href="app-tickets.html"><i class="icon-screen-tablet"></i>Tickets</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="tab-pane animated fadeIn" id="setting">
+                <div class="p-l-15 p-r-15">
+                    <h6>Choose Skin</h6>
+                    <ul class="choose-skin list-unstyled">
+                        <li data-theme="purple">
+                            <div class="purple"></div>
+                            <span>Purple</span>
+                        </li>
+                        <li data-theme="blue">
+                            <div class="blue"></div>
+                            <span>Blue</span>
+                        </li>
+                        <li data-theme="cyan">
+                            <div class="cyan"></div>
+                            <span>Cyan</span>
+                        </li>
+                        <li data-theme="green">
+                            <div class="green"></div>
+                            <span>Green</span>
+                        </li>
+                        <li data-theme="orange" class="active">
+                            <div class="orange"></div>
+                            <span>Orange</span>
+                        </li>
+                        <li data-theme="blush">
+                            <div class="blush"></div>
+                            <span>Blush</span>
+                        </li>
+                    </ul>
+                    <hr>
+                    <h6>General Settings</h6>
+                    <ul class="setting-list list-unstyled">
+                        <li>
+                            <label class="fancy-checkbox">
+                                <input type="checkbox" name="checkbox">
+                                <span>Report Panel Usag</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="fancy-checkbox">
+                                <input type="checkbox" name="checkbox">
+                                <span>Email Redirect</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="fancy-checkbox">
+                                <input type="checkbox" name="checkbox" checked>
+                                <span>Notifications</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="fancy-checkbox">
+                                <input type="checkbox" name="checkbox" checked>
+                                <span>Auto Updates</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="fancy-checkbox">
+                                <input type="checkbox" name="checkbox">
+                                <span>Offline</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="fancy-checkbox">
+                                <input type="checkbox" name="checkbox" checked>
+                                <span>Location Permission</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

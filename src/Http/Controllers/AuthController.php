@@ -3,6 +3,7 @@
 namespace Soguitech\Stadmin\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 use Soguitech\Stadmin\Facades\Admin;
 

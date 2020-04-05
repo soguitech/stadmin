@@ -1,10 +1,10 @@
 <?php
 
-
 namespace Soguitech\Stadmin\Repositories;
 
-
-use Soguitech\Repositories\ResourceRepository;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Soguitech\Stadmin\Exceptions\RoleAlreadyExists;
 use Soguitech\Stadmin\Exceptions\RoleDoesNotExist;
 use Soguitech\Stadmin\Models\Role;
@@ -20,6 +20,19 @@ class RoleRepository extends ResourceRepository
         $this->model = $role;
     }
 
+    /**
+     * @param int $id
+     * @return Builder|Builder[]|Collection|Model|mixed|Role|Role[]
+     */
+    public function getById(int $id)
+    {
+        return $this->model->with('permissions', 'users')->findOrFail($id);
+    }
+
+    /**
+     * @param array $attributes
+     * @return mixed
+     */
     public function create (array $attributes)
     {
         if ($this->getRole($attributes['name'])) {
@@ -29,17 +42,25 @@ class RoleRepository extends ResourceRepository
         return $this->store($attributes);
     }
 
+    /**
+     * @param string $name
+     * @return Builder|Model|object|Role|null
+     */
     public function findByName (string $name)
     {
-        $role = $this->getRole($name);
+       // $role = $this->getRole($name);
 
-        if (!$role) {
+       /* if (!$role) {
             throw RoleDoesNotExist::named($name);
-        }
+        }*/
 
-        return $role;
+        return $this->getRole($name);
     }
 
+    /**
+     * @param int $id
+     * @return Builder|Builder[]|Collection|Model|mixed|Role|Role[]
+     */
     public function findById (int $id)
     {
         $role = $this->getById($id);
@@ -51,6 +72,20 @@ class RoleRepository extends ResourceRepository
         return $role;
     }
 
+    /**
+     * @param $id
+     * @param $name
+     * @return mixed
+     */
+    public function checkIfRoleExistWithNameAndDiffId ($id, $name)
+    {
+        return $this->model->where('name', strtoupper($name))->where('id', '!=', $id)->first();
+    }
+
+    /**
+     * @param string $name
+     * @return Builder|Model|mixed|object|Role|null
+     */
     public function findOrCreate(string $name)
     {
         $permission = $this->getRole($name);
@@ -62,11 +97,12 @@ class RoleRepository extends ResourceRepository
         return $permission;
     }
 
+    /**
+     * @param string $params
+     * @return Builder|Model|object|Role|null
+     */
     public function getRole (string $params)
     {
         return $this->model->with('permissions')->where('name', $params)->first();
     }
-
-
-
 }

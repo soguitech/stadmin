@@ -1,91 +1,65 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>{{ config('stadmin.title', 'Stadmin') }}</title>
 
-    <title>{{ config('stadmin.title', 'Stadmin') }}</title>
-
-    <link rel="stylesheet" href="{{ stadmin_css_asset('vendors.min.css') }}">
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ stadmin_css_asset('style.css') }}">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{ stadmin_css_asset('responsive.css') }}">
-
-</head>
-    <body>
-        <div class="login-area"
-             @if(config('stadmin.login_background_image'))
-                 style="background-image: url({{config('stadmin.login_background_image')}}) !important;
-                    background-position: center center !important;
-                    background-size: cover !important;
-                    background-repeat: no-repeat !important;"
-            @endif>
-            <div class="d-table">
-                <div class="d-table-cell">
-                    <div class="login-form">
-                        <div class="logo">
-                            <a href="dashboard-analytics.html">
-                                <img src="{{ asset(config('stadmin.path_logo_img')) }}" alt="logo">
-                            </a>
+        <link rel="stylesheet" href="{{ stadmin_css_asset('bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ stadmin_css_asset('font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ stadmin_css_asset('main.css') }}">
+        <link rel="stylesheet" href="{{ stadmin_css_asset('color_skins.css') }}">
+    </head>
+    <body class="theme-orange">
+        <div id="wrapper">
+            <div class="vertical-align-wrap">
+                <div class="vertical-align-middle auth-main">
+                    <div class="auth-box">
+                        <div class="top">
+                            <img src="http://www.wrraptheme.com/templates/lucid/hr/html/assets/images/logo-white.svg" alt="Lucid">
                         </div>
-
-                        <h2>Bienvenue</h2>
-
-                        <form action="{{ route('stadmin.login') }}" method="POST">
-                            @csrf
-                            @if($errors->has('email'))
-                                @foreach($errors->get('username') as $message)
-                                    <div class="alert alert-danger" role="alert">{{$message}}</div>
-                                @endforeach
-                            @endif
-
-
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="email" placeholder="Email" title="">
-                                <span class="label-title"><i class='bx bx-user'></i></span>
+                        <div class="card">
+                            <div class="header">
+                                <p class="lead">Connectez-vous à votre compte</p>
                             </div>
+                            <div class="body">
+                                <form class="form-auth-small" action="{{ route('stadmin.login') }}" method="POST">
+                                    @csrf
 
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Mot de passe" title="">
-                                <span class="label-title"><i class='bx bx-lock'></i></span>
+                                    @if($errors->has(config('stadmin.auth.username')))
+                                        @foreach($errors->get(config('stadmin.auth.username')) as $message)
+                                            <div class="alert alert-danger" role="alert">{{$message}}</div>
+                                        @endforeach
+                                    @endif
+
+                                    <div class="form-group">
+                                        <label for="signin-email" class="control-label sr-only">Email</label>
+                                        <input type="email" class="form-control" id="signin-email" name="{{ config('stadmin.auth.username')  }}" placeholder="{{ ucfirst(config('stadmin.auth.username')) }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="signin-password" class="control-label sr-only">Mot de passe</label>
+                                        <input type="password" class="form-control" id="signin-password" name="password" placeholder="Mot de passe">
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <label class="fancy-checkbox element-left">
+                                            <input type="checkbox" name="remember">
+                                            <span>Se souvenir de moi</span>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">CONNEXION</button>
+                                    <div class="bottom">
+                                        <span class="helper-text m-b-10"><i class="fa fa-lock"></i> <a href="#">Mot de passe oublié?</a></span>
+                                    </div>
+                                </form>
                             </div>
-
-                            <div class="form-group">
-                                <div class="remember-forgot">
-                                    <label class="checkbox-box">Se souvenir de moi
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-
-                                    <a href="forgot-password.html" class="forgot-password">Mot de passe oublié?</a>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="login-btn">Connexion</button>
-
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <script src="{{ stadmin_js_asset('vendors.min.js') }}"></script>
-
-        <!-- ApexCharts JS -->
-
-        <!-- ChartJS -->
-        <script src="{{ stadmin_js_asset('chartjs/chartjs.min.js') }}"></script>
-
-        <script src="{{ stadmin_js_asset('jvectormap-1.2.2.min.js') }}"></script>
-        <!-- jvectormap World Mil JS -->
-        <script src="{{ stadmin_js_asset('jvectormap-world-mill-en.js') }}"></script>
-        <!-- Custom JS -->
-        <script src="{{ stadmin_js_asset('custom.js') }}"></script>
     </body>
 </html>

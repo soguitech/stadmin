@@ -60,6 +60,13 @@ class CreateZForeignKeys extends Migration
                 ->onDelete('restrict');
         });
 
+         Schema::table($tableNames['users'], function (Blueprint $table) use ($tableNames) {
+            $table->foreign('statut_id')
+                ->references('id')
+                ->on($tableNames['statuts'])
+                ->onDelete('restrict');
+         });
+
         Schema::table($tableNames['teams'], function (Blueprint $table) use ($tableNames) {
             $table->foreign('team_lead_id')
                 ->references('id')

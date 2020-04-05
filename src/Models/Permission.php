@@ -21,14 +21,21 @@ class Permission extends Model
      */
     private $permissionRepository;
 
-    public function __construct(PermissionRepository $permissionRepository, array $attributes = [])
+    /**
+     * Permission constructor.
+     * @param PermissionRepository $permissionRepository
+     * @param array $attributes
+     */
+   /* public function __construct()
     {
-        parent::__construct($attributes);
-
         $this->setTable(config('stadmin.table_names.permissions'));
-        $this->permissionRepository = $permissionRepository;
-    }
+        //$this->permissionRepository = $permissionRepository;
+    }*/
 
+    /**
+     * @param array $attributes
+     * @return mixed
+     */
     public function create(array $attributes = [])
     {
 

@@ -46,6 +46,7 @@ return [
         'user' => Soguitech\Stadmin\Models\Auth\Admin::class,
         'tag' => Soguitech\Stadmin\Models\Tag::class,
         'category' => Soguitech\Stadmin\Models\Category::class,
+        'statut' => Soguitech\Stadmin\Models\Statut::class,
 
     ],
 
@@ -60,6 +61,7 @@ return [
         'clients' => 'clients',
         'permissions' => 'permissions',
         'users' => 'admins',
+        'statuts' => 'statuts',
 
 
         'model_has_articles' => 'admin_article',
@@ -90,7 +92,7 @@ return [
 
     'login_background_image' => '',
 
-    'default_avatar' => '/img/vendor/stadmin/avatar/200x200.jpg',
+    'default_avatar' => '/img/vendor/stadmin/avatars/256-512.png',
 
     'check_route_permission' => true,
 

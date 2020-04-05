@@ -57,3 +57,18 @@ if (!function_exists('stadmin_img_asset')) {
         return config('stadmin.https') ? secure_asset('img/vendor/stadmin/' . $path) : asset('img/vendor/stadmin/' . $path);
     }
 }
+
+if (! function_exists('stadmin_auth')) {
+
+    function stadmin_auth()
+    {
+        return \Soguitech\Stadmin\Facades\Admin::user();
+    }
+}
+
+if (! function_exists('stadmin_avatar_asset')) {
+    function stadmin_avatar_asset($path)
+    {
+        return config('stadmin.https') ? secure_asset('img/vendor/stadmin/avatars/' . $path) : asset('img/vendor/stadmin/avatars/' . $path);
+    }
+}

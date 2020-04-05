@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="dev" />
+    <orderEntry type="module" module-name="security_agency" />
   </component>
 </module>

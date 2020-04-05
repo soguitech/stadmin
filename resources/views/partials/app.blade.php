@@ -9,25 +9,40 @@
 
         <title>{{ config('stadmin.title') }}</title>
 
-        <link rel="stylesheet" href="{{ stadmin_css_asset('vendors.min.css') }}">
-        <link rel="stylesheet" href="{{ stadmin_css_asset('style.css') }}">
-        <link rel="stylesheet" href="{{ stadmin_css_asset('responsive.css') }}">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="{{ stadmin_css_asset('bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ stadmin_css_asset('font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ stadmin_css_asset('toastr.min.css') }}">
+        <link rel="stylesheet" href="{{ stadmin_css_asset('main.css') }}">
+        <link rel="stylesheet" href="{{ stadmin_css_asset('color_skins.css') }}">
+
+        @yield('style')
     </head>
-    <body>
-        @include('stadmin::partials.sidemenu')
-
-        <div class="main-content d-flex flex-column">
-            @include('stadmin::partials.nav')
-
-            @yield('content')
-
-            @include('stadmin::partials.footer')
+    <body class="theme-orange">
+        <div class="page-loader-wrapper">
+            <div class="loader">
+                <div class="m-t-30"><img src="http://www.wrraptheme.com/templates/lucid/hr/html/assets/images/logo-icon.svg" width="48" height="48" alt="Lucid"></div>
+                <p>SVP attendre...</p>
+            </div>
         </div>
 
-        <script src="{{ stadmin_js_asset('vendors.min.js') }}"></script>
-        <script src="{{ stadmin_js_asset('chartjs/chartjs.min.js') }}"></script>
-        <script src="{{ stadmin_js_asset('jvectormap-1.2.2.min.js') }}"></script>
-        <script src="{{ stadmin_js_asset('jvectormap-world-mill-en.js') }}"></script>
-        <script src="{{ stadmin_js_asset('custom.js') }}"></script>
+        <div id="wrapper">
+            @include('stadmin::partials.nav')
+
+            @include('stadmin::partials.sidemenu')
+
+            @yield('content')
+        </div>
+
+        <script src="{{ stadmin_js_asset('bundles/libscripts.bundle.js') }}"></script>
+        <script src="{{ stadmin_js_asset('bundles/vendorscripts.bundle.js') }}"></script>
+        <script src="{{ stadmin_js_asset('toastr.js') }}"></script>
+        <script src="{{ stadmin_js_asset('bundles/chartist.bundle.js') }}"></script>
+        <script src="{{ stadmin_js_asset('bundles/knob.bundle.js') }}"></script>
+        <script src="{{ stadmin_js_asset('bundles/mainscripts.bundle.js') }}"></script>
+        <script src="{{ stadmin_js_asset('index.js') }}"></script>
+
+        @yield('script')
     </body>
 </html>

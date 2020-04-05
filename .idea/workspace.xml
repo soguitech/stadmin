@@ -2,136 +2,208 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="183f4064-749a-46a3-87c9-cccbf6fec5bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/create_categories_table.php.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/create_clients_table.php.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/create_projects_table.php.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/create_tags_table.php.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/create_teams_table.php.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/create_z_foreign_keys.php.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/responsive.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/vendors.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/boxicons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/boxicons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/boxicons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/boxicons.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/boxiconsd41d.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/summernote.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/summernote.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/summernote.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/summernote.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/summernoted41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/avatar/200x200.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/france-flag.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/germany-flag.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/italy-flag.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/russia-flag.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/spain-flag.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/us-flag.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-area-charts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-bar-charts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-column-chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-line-chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-mixed-charts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-pie-donut-chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-radar-chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-radialbar-charts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/apexcharts/apexcharts-irregular-data-series.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/apexcharts/apexcharts-stock-prices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/apexcharts/apexcharts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/chartjs/chartjs-custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/chartjs/chartjs.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/fiva-map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jvectormap-1.2.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jvectormap-world-mill-en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/vendors.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/app.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/sidemenu.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Facades/Admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Http/Controllers/AuthController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Http/Controllers/ClientController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Http/Controllers/ProjectController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Http/Controllers/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Middlewares/StadminAuth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Middlewares/StadminGuest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/Auth/Admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/Client.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/Project.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/Tag.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repositories/ClientRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repositories/PermissionRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repositories/ProjectRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repositories/ResourceRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repositories/RoleRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/create_statuts_table.php.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/AdminTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/blog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/chartist-plugin-tooltip.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/chartist.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/color_skins.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/inbox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/toastr.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/simple-Line-Icons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/simple-Line-Icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/simple-Line-Icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/simple-Line-Icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/weathericons-regular-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/weathericons-regular-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/weathericons-regular-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/weathericons-regular-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/weathericons-regular-webfontd41d.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bundles/chartist.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bundles/datatablescripts.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bundles/easypiechart.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bundles/flotscripts.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bundles/fullcalendarscripts.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bundles/jvectormap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bundles/knob.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bundles/libscripts.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bundles/mainscripts.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bundles/morrisscripts.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bundles/vendorscripts.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/dialogs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/index2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/blog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/chart/c3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/chart/gauge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/charts/chart-widgets.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/charts/chartjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/charts/flot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/charts/jquery-knob.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/charts/morris.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/charts/peity_chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/charts/sparkline.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/file/filemanager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/forms/advanced-form-elements.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/forms/dropify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/forms/editors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/forms/form-wizard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/maps/google.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/maps/jvectormap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/medias/image-gallery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/range-sliders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/tables/editable-table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/tables/jquery-datatable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/treeview/bootstrap-treeview.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/treeview/jstree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/ui/dialogs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/pages/ui/sortable-nestable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/social.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/validator/validator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/validator/validator.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/widgets/infobox/infobox-1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/roles/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Console/ExportSeedCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Statut.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repositories/UserRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../security_agency/tests/CTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/stadmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/stadmin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/stadmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/stadmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ArticleFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ArticleFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/create_articles_table.php.stub" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/create_blogs_table.php.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/create_roles_permissions_table.php.stub" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/create_roles_permissions_table.php.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/create_users_table.php.stub" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/create_admins_table.php.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bundle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/datatables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/daterangepicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/slick-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/slick.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/apexcharts.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/dashboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/daterangepicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/ecommerce-dashboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/irregular-data-series.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jquery.vmap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jquery.vmap.usa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/vmap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/BaseApp.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/_BaseApp.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/views/LoginComponent/LoginComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/views/LoginComponent/_LoginComponent.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/routes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/services/helpers/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/services/helpers/helper_service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/services/helpers/initialize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/services/helpers/momentjs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/services/storage/storage_service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/modules/actions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/modules/getters.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/modules/mutations.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/modules/state.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/create_admins_table.php.stub" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/create_admins_table.php.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/create_z_foreign_keys.php.stub" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/create_z_foreign_keys.php.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/vendors.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/boxicons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/boxicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/boxicons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/boxicons.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/boxiconsd41d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/summernote.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/summernote.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/summernote.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/summernote.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/summernoted41d.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/avatar/200x200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/france-flag.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/germany-flag.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/italy-flag.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/russia-flag.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/spain-flag.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/us-flag.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-area-charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-bar-charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-column-chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-line-chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-mixed-charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-pie-donut-chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-radar-chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/apexcharts/apex-custom-radialbar-charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/apexcharts/apexcharts-irregular-data-series.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/apexcharts/apexcharts-stock-prices.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/apexcharts/apexcharts.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chartjs/chartjs-custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chartjs/chartjs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/fiva-map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jvectormap-1.2.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jvectormap-world-mill-en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/vendors.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/sidemenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/sidemenu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/roles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/roles/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Contracts/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Contracts/Permission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exceptions/PermissionAlreadyExists.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exceptions/PermissionAlreadyExists.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exceptions/PermissionDoesNotExist.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exceptions/PermissionDoesNotExist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exceptions/RoleAlreadyExists.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exceptions/RoleAlreadyExists.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Http/Controllers/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/RoleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Auth/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Auth/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Client.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Permission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Project.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Tag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repositories/ResourceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/ResourceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repositories/RoleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/RoleRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StadminServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/StadminServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Traits/HasArticles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Traits/HasArticles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/CreateArticleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CreateArticleTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ArticlesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ArticlesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/app/Http/Controllers/AgentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/app/Http/Controllers/AgentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/app/Http/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/app/Http/Controllers/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/app/Http/Controllers/PlanningController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/app/Http/Controllers/PlanningController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/app/Repositories/AgentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/app/Repositories/AgentRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/app/Repositories/MainRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/app/Repositories/MainRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/app/Repositories/PlanningRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/app/Repositories/PlanningRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/config/jwt.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/config/jwt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/laravel-echo-server.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/css/style.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/analytics-dashboard-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/analytics-dashboard-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/cryptocurrency-dashboard-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/cryptocurrency-dashboard-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/ecommerce-dashboard-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/ecommerce-dashboard-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/education-dashboard-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/education-dashboard-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/event-dashboard-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/event-dashboard-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/helpdesk-dashboard-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/helpdesk-dashboard-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/projects-dashboard-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/projects-dashboard-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/sales-dashboard-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/sales-dashboard-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/server-dashboard-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/server-dashboard-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/social-dashboard-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/js/dashboard/social-dashboard-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/plugins/codemirror/codemirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/plugins/codemirror/codemirror.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/plugins/datatables/responsive/dataTables.responsive.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/plugins/datatables/responsive/dataTables.responsive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/public/plugins/jstree/jstree.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/public/plugins/jstree/jstree.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/api/agent.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/api/agent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/api/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/api/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/CardComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/CardComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/LeftSideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/LeftSideBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/ListPlannings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/ListPlannings.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/NavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/dashboard/AgentActivity.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/dashboard/AgentActivity.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/dashboard/ConsigneDay.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/dashboard/ConsigneDay.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/dashboard/CurrentPlannings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/dashboard/CurrentPlannings.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/dashboard/LastPlanning.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/dashboard/LastPlanning.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/dashboard/MainComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/dashboard/MainComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/dashboard/RecentMainCourante.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/dashboard/RecentMainCourante.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/navBar/LangueComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/navBar/LangueComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/navBar/MessageComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/navBar/MessageComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/navBar/ProfilHeadIconComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/shared/views/navBar/ProfilHeadIconComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/DashboardComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/DashboardComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/agent/AddAgentComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/agent/AddAgentComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/agent/AgentsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/agent/AgentsComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/agent/AgentsTrashComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/agent/AgentsTrashComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/agent/shared/CardComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/agent/shared/CardComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/mains/MainCouranteComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/mains/MainCouranteComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/mains/MainCouranteTrashComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/mains/MainCouranteTrashComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/planning/AddPlanningComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/planning/AddPlanningComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/planning/CurrentPlanningComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/planning/CurrentPlanningComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/planning/PlanningTrashComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/planning/PlanningTrashComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/planning/PlanningsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/components/views/planning/PlanningsComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/store/modules/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/store/modules/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/store/modules/getters.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/store/modules/getters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/store/modules/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/store/modules/mutations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/resources/js/store/modules/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/resources/js/store/modules/state.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/routes/channels.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/routes/channels.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../security_agency/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../security_agency/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,6 +354,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1XY0Ais21rJTlwUsykKkodvbCai" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -290,22 +363,22 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../dev/public/js/vendor/stadmin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/img" />
-      <recent name="$PROJECT_DIR$/public/fonts" />
+      <recent name="$PROJECT_DIR$/../../../dev/public/js/vendor/stadmin" />
+      <recent name="$PROJECT_DIR$/../../../dev/public/css/vendor/stadmin" />
+      <recent name="$PROJECT_DIR$/public/js/validator" />
       <recent name="$PROJECT_DIR$/public/js" />
-      <recent name="$PROJECT_DIR$/public/css" />
-      <recent name="$PROJECT_DIR$/resources/views" />
+      <recent name="$PROJECT_DIR$/public/fonts" />
     </key>
   </component>
   <component name="RunManager">
@@ -326,7 +399,21 @@
       <updated>1583021052621</updated>
       <workItem from="1583021060142" duration="5623000" />
       <workItem from="1583150209600" duration="35756000" />
-      <workItem from="1583502887338" duration="26941000" />
+      <workItem from="1583502887338" duration="47078000" />
+      <workItem from="1583920188084" duration="35839000" />
+      <workItem from="1584357179993" duration="38639000" />
+      <workItem from="1584552082508" duration="186000" />
+      <workItem from="1584610679959" duration="18429000" />
+      <workItem from="1584706930363" duration="3292000" />
+      <workItem from="1584737021847" duration="786000" />
+      <workItem from="1585040125275" duration="16261000" />
+      <workItem from="1585502234113" duration="4948000" />
+      <workItem from="1585618163317" duration="15360000" />
+      <workItem from="1585752732937" duration="9581000" />
+      <workItem from="1585843477944" duration="277000" />
+      <workItem from="1585843980628" duration="4453000" />
+      <workItem from="1586100411089" duration="4857000" />
+      <workItem from="1586109933550" duration="4963000" />
     </task>
     <servers />
   </component>
@@ -334,10 +421,11 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="533" y="214" width="800" height="677" key="#Inspections" timestamp="1583245943088">
-      <screen x="0" y="25" width="1877" height="1055" />
+    <state x="532" y="216" width="800" height="677" key="#Inspections" timestamp="1585754458328">
+      <screen x="0" y="27" width="1872" height="1053" />
     </state>
     <state x="533" y="214" width="800" height="677" key="#Inspections/0.25.1877.1055@0.25.1877.1055" timestamp="1583245943088" />
+    <state x="532" y="216" key="#Inspections/0.27.1872.1053@0.27.1872.1053" timestamp="1585754458328" />
     <state x="820" y="213" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583585511544">
       <screen x="0" y="25" width="1877" height="1055" />
     </state>
@@ -346,25 +434,44 @@
       <screen x="0" y="25" width="1877" height="1055" />
     </state>
     <state x="746" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.25.1877.1055@0.25.1877.1055" timestamp="1583339662376" />
-    <state x="690" y="33" width="476" height="1039" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583316600972">
+    <state x="690" y="33" width="476" height="1039" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584097519991">
       <screen x="0" y="25" width="1877" height="1055" />
     </state>
-    <state x="690" y="33" width="476" height="1039" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.25.1877.1055@0.25.1877.1055" timestamp="1583316600972" />
-    <state x="721" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583243225716">
-      <screen x="0" y="25" width="1877" height="1055" />
+    <state x="690" y="33" width="476" height="1039" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.25.1877.1055@0.25.1877.1055" timestamp="1584097519991" />
+    <state x="719" y="311" width="424" height="484" key="FileChooserDialogImpl" timestamp="1585507640639">
+      <screen x="0" y="27" width="1872" height="1053" />
     </state>
     <state x="721" y="310" width="424" height="484" key="FileChooserDialogImpl/0.25.1877.1055@0.25.1877.1055" timestamp="1583243225716" />
-    <state x="550" y="273" width="687" height="405" key="NewPhpClassDialog" timestamp="1583672024315">
+    <state x="719" y="311" key="FileChooserDialogImpl/0.27.1872.1053@0.27.1872.1053" timestamp="1585507640639" />
+    <state x="550" y="273" width="687" height="405" key="NewPhpClassDialog" timestamp="1584030871092">
       <screen x="0" y="25" width="1877" height="1055" />
     </state>
-    <state x="550" y="273" width="687" height="405" key="NewPhpClassDialog/0.25.1877.1055@0.25.1877.1055" timestamp="1583672024315" />
-    <state x="427" y="187" key="SettingsEditor" timestamp="1583150352114">
+    <state x="550" y="273" width="687" height="405" key="NewPhpClassDialog/0.25.1877.1055@0.25.1877.1055" timestamp="1584030871092" />
+    <state x="734" y="474" width="399" height="157" key="NewPhpFileDialog" timestamp="1583923446198">
       <screen x="0" y="25" width="1877" height="1055" />
+    </state>
+    <state x="734" y="474" width="399" height="157" key="NewPhpFileDialog/0.25.1877.1055@0.25.1877.1055" timestamp="1583923446198" />
+    <state x="430" y="224" width="1037" height="737" key="SettingsEditor" timestamp="1586114663474">
+      <screen x="0" y="27" width="1872" height="1053" />
     </state>
     <state x="427" y="187" key="SettingsEditor/0.25.1877.1055@0.25.1877.1055" timestamp="1583150352114" />
-    <state x="752" y="157" width="372" height="790" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1583606452886">
-      <screen x="0" y="25" width="1877" height="1055" />
+    <state x="430" y="224" width="1037" height="737" key="SettingsEditor/0.27.1872.1053@0.27.1872.1053" timestamp="1586114663474" />
+    <state x="750" y="159" width="371" height="796" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1584626458581">
+      <screen x="0" y="27" width="1872" height="1053" />
     </state>
-    <state x="752" y="157" width="372" height="790" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.25.1877.1055@0.25.1877.1055" timestamp="1583606452886" />
+    <state x="752" y="157" width="372" height="790" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.25.1877.1055@0.25.1877.1055" timestamp="1584448210420" />
+    <state x="750" y="159" width="371" height="796" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.27.1872.1053@0.27.1872.1053" timestamp="1584626458581" />
+    <state x="701" y="467" width="460" height="179" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586103278410">
+      <screen x="0" y="27" width="1872" height="1053" />
+    </state>
+    <state x="701" y="467" width="460" height="179" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1872.1053@0.27.1872.1053" timestamp="1586103278410" />
+    <state x="600" y="252" key="run.anything.popup" timestamp="1586103182678">
+      <screen x="0" y="27" width="1872" height="1053" />
+    </state>
+    <state x="600" y="252" key="run.anything.popup/0.27.1872.1053@0.27.1872.1053" timestamp="1586103182678" />
+    <state x="599" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1585684372999">
+      <screen x="0" y="27" width="1872" height="1053" />
+    </state>
+    <state x="599" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1872.1053@0.27.1872.1053" timestamp="1585684372999" />
   </component>
 </project>

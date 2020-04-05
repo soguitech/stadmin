@@ -1,7 +1,6 @@
 <?php
 
-
-namespace Soguitech\Repositories;
+namespace Soguitech\Stadmin\Repositories;
 
 
 abstract class ResourceRepository

@@ -11,12 +11,17 @@ Route::group(['middleware' => ['web'], 'prefix' => config('stadmin.route.prefix'
     // =================================== AUTH ===============================//
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('stadmin.showLoginForm');
     Route::post('/login', [AuthController::class, 'login'])->name('stadmin.login');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('stadmin.logout');
+
+    // =================================== USERS ===============================//
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('stadmin.dash');
+    Route::get('/users', [UserController::class, 'index'])->name('stadmin.users');
 
     // =================================== CLIENTS ===============================//
 
 
     // =================================== PROJECTS ===============================//
+
 
 
 
@@ -32,9 +37,17 @@ Route::group(['middleware' => ['web'], 'prefix' => config('stadmin.route.prefix'
     Route::post('/permissions', [PermissionController::class, 'store'])->name('permissions.store');
 
     // ======================= ROLES ======================== //
-    Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
+    Route::get('/all-roles', [RoleController::class, 'allRoles'])->name('stadmin.all.roles');
+
+
+    Route::get('/roles', [RoleController::class, 'index'])->name('stadmin.roles');
+    Route::post('/roles', [RoleController::class, 'store'])->name('stadmin.roles.add');
     Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
     Route::get('/roles/{role}', [RoleController::class, 'show'])->name('roles.show');
-    Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
     Route::post('/roles/givePermissionTo/{role}', [RoleController::class, 'givePermissionTo'])->name('roles.givePermissionTo');
+
+    //=================== AJAX ROELS ============================= //
+    Route::delete('/roles/delete/{id}', [RoleController::class, 'delete'])->name('stadmin.roles.delete');
+    Route::get('/roles/{id}/edit', [RoleController::class, 'edit'])->name('stadmin.roles.edit');
+    Route::patch('/roles/{id}', [RoleController::class, 'update'])->name('stadmin.roles.update');
 });

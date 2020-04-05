@@ -22,21 +22,21 @@ class Role extends Model {
      */
     private $roleRepository;
 
+    public $timestamps = false;
+
     /**
      * Role constructor.
      * @param RoleRepository $roleRepository
      * @param array $attributes
      */
-    public function __construct(RoleRepository $roleRepository, array $attributes = [])
+   /* public function __construct()
     {
-
-        parent::__construct($attributes);
-
         $this->setTable(config('stadmin.table_names.roles'));
-        $this->roleRepository = $roleRepository;
-    }
+       // $this->roleRepository = $roleRepository;
 
-    public function create(array $attributes = [])
+    }*/
+
+    /*public function create(array $attributes = [])
     {
         return $this->roleRepository->create($attributes);
        /* $attributes['guard_name'] = $attributes['guard_name'] ?? Guard::getDefaultName(static::class);
@@ -45,8 +45,8 @@ class Role extends Model {
             throw RoleAlreadyExists::create($attributes['name'], $attributes['guard_name']);
         }
 
-        return static::query()->create($attributes);*/
-    }
+        return static::query()->create($attributes);
+    }*/
 
     public function permissions()
     {
